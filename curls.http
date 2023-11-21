@@ -1,0 +1,44 @@
+GET http://localhost:5000/chain HTTP/1.1
+content-type: application/json
+
+###
+
+POST http://localhost:5000/transactions/new HTTP/1.1
+content-type: application/json
+
+{
+ "sender": "meu endereco",
+ "recipient": "endereco do meu vizinho",
+ "amount": 5
+}
+
+###
+
+POST http://localhost:5000/transactions/new HTTP/1.1
+content-type: application/json
+
+{
+ "sender": "meu endereco",
+ "recipient": "endereco do outro vizinho",
+ "amount": 10
+}
+
+###
+
+GET http://localhost:5000/mine HTTP/1.1
+content-type: application/json
+
+###
+
+POST http://localhost:5000/nodes/register HTTP/1.1
+content-type: application/json
+  
+{
+  "nodes": ["http://localhost:5001"]
+} 
+
+
+###
+
+GET http://localhost:5000/nodes/resolve HTTP/1.1
+content-type: application/json
